@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <title>Wingspan Scoring</title>
+  </head>
+  <body>
+
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col"></th>
+                <th scope="col"><input type="text" id="playerName1" maxlength="6" size="5" placeholder="Player 1"></th>
+                <th scope="col"><input type="text" id="playerName2" maxlength="6" size="5" placeholder="Player 2"></th>
+                <th scope="col"><input type="text" id="playerName3" maxlength="6" size="5" placeholder="Player 3"></th>
+                <th scope="col"><input type="text" id="playerName4" maxlength="6" size="5" placeholder="Player 4"></th>
+                <th scope="col"><input type="text" id="playerName5" maxlength="6" size="5" placeholder="Player 5"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Total</th>
+                <td><input type="number" id="scorePlayer1" value="0" min="0" step="1" max="200" readonly></td>
+                <td><input type="number" id="scorePlayer2" value="0" min="0" step="1" max="200" readonly></td>
+                <td><input type="number" id="scorePlayer3" value="0" min="0" step="1" max="200" readonly></td>
+                <td><input type="number" id="scorePlayer4" value="0" min="0" step="1" max="200" readonly></td>
+                <td><input type="number" id="scorePlayer5" value="0" min="0" step="1" max="200" readonly></td>
+            </tr>
+            <tr>
+                <th scope="row">Birds</th>
+                <td><input oninput="updateScore()" type="number" id="birdsPlayer1" value="0" min="0" step="1" max="15"></td>
+                <td><input oninput="updateScore()" type="number" id="birdsPlayer2" value="0" min="0" step="1" max="15"></td>
+                <td><input oninput="updateScore()" type="number" id="birdsPlayer3" value="0" min="0" step="1" max="15"></td>
+                <td><input oninput="updateScore()" type="number" id="birdsPlayer4" value="0" min="0" step="1" max="15"></td>
+                <td><input oninput="updateScore()" type="number" id="birdsPlayer5" value="0" min="0" step="1" max="15"></td>
+            </tr>
+            <tr>
+                <th scope="row">Bonus Cards</th>
+                <td><input oninput="updateScore()" type="number" id="bonusPlayer1" value="0" min="0" step="1" max="99"></td>
+                <td><input oninput="updateScore()" type="number" id="bonusPlayer2" value="0" min="0" step="1" max="99"></td>
+                <td><input oninput="updateScore()" type="number" id="bonusPlayer3" value="0" min="0" step="1" max="99"></td>
+                <td><input oninput="updateScore()" type="number" id="bonusPlayer4" value="0" min="0" step="1" max="99"></td>
+                <td><input oninput="updateScore()" type="number" id="bonusPlayer5" value="0" min="0" step="1" max="99"></td>
+            </tr>
+            <tr>
+                <th scope="row">End-Of-Round Goals</th>
+                <td><input oninput="updateScore()" type="number" id="goalsPlayer1" value="0" min="0" step="1" max="99"></td>
+                <td><input oninput="updateScore()" type="number" id="goalsPlayer2" value="0" min="0" step="1" max="99"></td>
+                <td><input oninput="updateScore()" type="number" id="goalsPlayer3" value="0" min="0" step="1" max="99"></td>
+                <td><input oninput="updateScore()" type="number" id="goalsPlayer4" value="0" min="0" step="1" max="99"></td>
+                <td><input oninput="updateScore()" type="number" id="goalsPlayer5" value="0" min="0" step="1" max="99"></td>
+            </tr>
+            <tr>
+                <th scope="row">Eggs</th>
+                <td><input oninput="updateScore()" type="number" id="eggsPlayer1" value="0" min="0" step="1" max="99"></td>
+                <td><input oninput="updateScore()" type="number" id="eggsPlayer2" value="0" min="0" step="1" max="99"></td>
+                <td><input oninput="updateScore()" type="number" id="eggsPlayer3" value="0" min="0" step="1" max="99"></td>
+                <td><input oninput="updateScore()" type="number" id="eggsPlayer4" value="0" min="0" step="1" max="99"></td>
+                <td><input oninput="updateScore()" type="number" id="eggsPlayer5" value="0" min="0" step="1" max="99"></td>
+            </tr>
+            <tr>
+                <th scope="row">Food On Cards</th>
+                <td><input oninput="updateScore()" type="number" id="foodPlayer1" value="0" min="0" step="1" max="99"></td>
+                <td><input oninput="updateScore()" type="number" id="foodPlayer2" value="0" min="0" step="1" max="99"></td>
+                <td><input oninput="updateScore()" type="number" id="foodPlayer3" value="0" min="0" step="1" max="99"></td>
+                <td><input oninput="updateScore()" type="number" id="foodPlayer4" value="0" min="0" step="1" max="99"></td>
+                <td><input oninput="updateScore()" type="number" id="foodPlayer5" value="0" min="0" step="1" max="99"></td>
+            </tr>
+            <tr>
+                <th scope="row">Tucked Cards</th>
+                <td><input oninput="updateScore()" type="number" id="tuckedPlayer1" value="0" min="0" step="1" max="99"></td>
+                <td><input oninput="updateScore()" type="number" id="tuckedPlayer2" value="0" min="0" step="1" max="99"></td>
+                <td><input oninput="updateScore()" type="number" id="tuckedPlayer3" value="0" min="0" step="1" max="99"></td>
+                <td><input oninput="updateScore()" type="number" id="tuckedPlayer4" value="0" min="0" step="1" max="99"></td>
+                <td><input oninput="updateScore()" type="number" id="tuckedPlayer5" value="0" min="0" step="1" max="99"></td>
+            </tr>
+        </tbody>
+    </table>
+    
+   
+ 
+   
+    <!-- JavaScript -->
+    <script src="js/functions.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
