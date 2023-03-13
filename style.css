@@ -3,6 +3,10 @@ body {
     font-size: 22px;
 }
 
+#scorePlayer1, #scorePlayer2, #scorePlayer3, #scorePlayer4, #scorePlayer5 {
+    font-weight: bold;
+}
+
 #playerName1, #scorePlayer1, #birdsPlayer1, #bonusPlayer1, #goalsPlayer1, #eggsPlayer1, #foodPlayer1, #tuckedPlayer1 {
     color: blue;
 }
